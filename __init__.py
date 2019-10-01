@@ -61,7 +61,7 @@ else:
 # extend the path to add the python extension
 sys.path += [cef_dir]
 
-print 'Going to import {}'.format(libcef)
+print('Going to import {}'.format(libcef))
 if exists(libcef):
     # Import local module
     ctypes.CDLL(libcef, ctypes.RTLD_GLOBAL)
@@ -71,7 +71,7 @@ if exists(libcef):
         raise Exception("Unsupported python version: %s" % sys.version)
 else:
     # Import from package
-    print 'Unable to locate cefpython, trying to use package'
+    print('Unable to locate cefpython, trying to use package')
     from cefpython3 import cefpython
 
 
@@ -496,14 +496,14 @@ class CefBrowser(Widget):
     def go_forward(self):
         '''Going to forward in browser history
         '''
-        print "go forward"
+        print("go forward")
         self.browser.GoForward()
 
 
     def go_back(self):
         '''Going back in browser history
         '''
-        print "go back"
+        print("go back")
         self.browser.GoBack()
 
 
@@ -675,7 +675,7 @@ class ClientHandler:
             height):
         # print "OnPaint()"
         if paintElementType != cefpython.PET_VIEW:
-            print "Popups aren't implemented yet"
+            print("Popups aren't implemented yet")
             return
 
         #update buffer
